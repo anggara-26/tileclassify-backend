@@ -1,0 +1,6 @@
+Django>=4.0.0
+djangorestframework>=3.14.0
+Pillow>=10.0.0
+numpy>=2.1.0
+tensorflow>=2.10.0
+keras>=3.0.0
