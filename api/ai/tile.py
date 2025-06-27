@@ -1,13 +1,14 @@
 import numpy as np
 from keras.preprocessing import image
 from keras.models import load_model
+import os
 
 from tile.settings import BASE_DIR
 
 class TileClassifier:
     def __init__(self):
         # Load model dari file .h5
-        model_path = f"{BASE_DIR}\\api\\ai\\weights\\tile_classification_model.h5"
+        model_path = os.path.join(BASE_DIR, 'api', 'ai', 'weights', 'tile_classification_model.h5')
         print(f"Loading model from: {model_path}")
         self.model = load_model(model_path)
 
