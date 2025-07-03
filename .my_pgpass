@@ -1,1 +1,1 @@
-localhost:5432:dockerdjango:dbuser:dbpassword
+localhost:5432:dockerdjango:admin:admin123

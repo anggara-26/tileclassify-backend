@@ -25,8 +25,8 @@ try:
     psycopg2.connect(
         host=os.environ.get('DATABASE_HOST', 'db'),
         port=os.environ.get('DATABASE_PORT', '5432'),
-        user=os.environ.get('DATABASE_USER', 'dbuser'),
-        password=os.environ.get('DATABASE_PASSWORD', ''),
+        user=os.environ.get('DATABASE_USERNAME', 'admin'),
+        password=os.environ.get('DATABASE_PASSWORD', 'admin123'),
         database=os.environ.get('DATABASE_NAME', 'dockerdjango')
     )
     print('Database is ready!')
