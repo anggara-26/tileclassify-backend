@@ -1,5 +1,20 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -e
 
+echo "Starting Django application..."
+
+# Wait for database
+echo "Waiting for database..."
+sleep 5
+
+# Collect static files
+echo "Collecting static files..."
 python manage.py collectstatic --noinput
+
+# Run migrations
+echo "Running migrations..."
 python manage.py migrate --noinput
-python -m gunicorn --bind 0.0.0.0:8000 --workers 3 tile.wsgi:application
+
+# Start Gunicorn
+echo "Starting Gunicorn..."
+exec gunicorn --bind 0.0.0.0:8000 --workers 3 tile.wsgi:application
